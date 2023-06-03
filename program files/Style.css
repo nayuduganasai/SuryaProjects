@@ -1,0 +1,11 @@
+
+
+body{margin-top: 10%;
+}
+
+table tr{background-color: SkyBlue;
+}
+.required{content: " *";color: red;
+}
+p {color: red
+}

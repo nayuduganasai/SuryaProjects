@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>form practice</title>
+<link  rel="stylesheet"  href="Style.css" />
+</head>
+<body>
+<center>
+<h1>Candidate information</h1>
+    <table border="1" width=750>
+        <form action = "FirstsServlet">
+            <tr>
+                <td><label>Name:<span class="required">* </span></label></td>
+                <td><input type="text" pattern="[a-zA-z]{5,10}" required></td>
+            </tr>
+            
+            <tr>
+                <td><label>Password:<span class="required">* </span></label></td>
+                <td><input type="password" pattern="^[A-Za-z]{6,10}$" required></td>
+            </tr>
+            
+            <tr>
+                <td><label>Phone number:<span class="required">* </span></label></td>
+                <td><input type="text" pattern="[7-9][0-9]{9}" required></td>
+            </tr>
+            
+            <tr>
+                <td><label>Gender:<span class="required">* </span></label></td>
+                <td>
+                <input type="radio" name="c1"/>Male
+                <input type="radio" name="c1"/>Female
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label>Date of Birth:<span class="required">* </span></label></td>
+                <td><input type="date" required></td>
+            </tr>
+            
+            <tr>
+                <td><label>Email:<span class="required">* </span></label></td>
+                <td><input type="email" required></td>
+            </tr>
+                
+            <tr>
+                <td><label>Highest Qualification:<span class="required">* </span></label></td>
+                <td>
+                <select name="Highest qualification">
+                    <option>Select Highest qualification</option>
+                    <option>B.Tech</option>
+                    <option>Art</option>
+                    <option>Commerce</option>
+                </select>
+                </td >
+            </tr>
+            
+            <tr>
+                <td><label>Courses Interested in:<span class="required">* </span></label></td>
+                <td><input type="checkbox" name="c1"/>Java
+                    <input type="checkbox" name="c1"/>HTML 5
+                    <input type="checkbox" name="c1"/>CSS 3
+                    <input type="checkbox" name="c1"/>Angular Js
+                    <input type="checkbox" name="c1"/>JQuery
+                </td>
+            </tr>
+            
+            <tr>
+                <td><label>Comments:(Mention External Certification if any)<span class="required">* </span></label></td>
+                <td><textarea rows="4" cols="50"></textarea></td>
+            </tr>
+            
+            <tr>
+                <td><label>Upload Degree / External certification:<span class="required">* </span></label></td>
+                <td><input type="file"></td>
+            </tr>
+                
+            <tr>
+                <td></td>
+                <td>
+                <input type="submit" value="Submit Information">
+                <input type="reset" value="Clear">
+                </td>
+            </tr>
+            </form>
+        </table>
+        <p>All fields marked (*) are mandatory</p>
+
+
+
+</center>
+</body>
+</html>

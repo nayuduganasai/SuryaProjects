@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>purchase amount</title>
+<style type="text/css">
+table,div{
+	border:2px solid blue;
+	padding:10px;
+	width:20%;
+	}
+td{
+padding:10px;
+}
+</style>
+</head>
+
+<script type="text/javascript">
+function display(event){
+    
+    if(event.keyCode == 13){
+        var regexN= /[0-9]{1,10}/;
+        var pno= document.form.pid.value;
+        var k= true;
+        if(!regexN.test(pno)){
+            alert("Product Number should be in 5-10 digits");
+            k=false;
+        }
+        
+        var regexT= /[a-zA-Z]{3,10}/;
+        var pname= document.form.pname.value;
+        
+        if(!regexT.test(pname)){
+            alert("Product Name should be in 3-10 Character");
+            k=false;
+        }
+        
+        var qua= document.form.quant.value;
+        
+        if(qua == "" || qua == 0){
+            alert("Quantity should not be empty or 0");
+            k=false;
+        }
+        
+        var rate= document.form.rate.value;
+        
+        if(rate == "" || rate == 0){
+            alert("Rate should not be empty or 0");
+            k=false;
+        }
+        
+    
+        if(k== true){
+            var total = qua* rate;
+            document.getElementById("total").innerText= total;
+            
+        }else{
+            document.getElementById("total").innerText= "";
+        }
+        
+        
+        }
+}
+
+</script>
+<center>
+<body>
+<form name = "form" onkeypress= "display(event)" action="">
+<table>
+	<tr>
+		<td>product ID</td>
+		<td><input type="text" name="pid" ></td>
+	</tr>
+	<tr>
+		<td>product Name</td>
+		<td><input type="text" name="pname"></td>
+	</tr>
+	<tr>
+		<td>Rate</td>
+		<td><input type="text" name="rate"></td>
+	</tr>
+	<tr>
+		<td>Quantity</td>
+		<td><input type="text" name="quant"></td>
+	</tr>
+</table><br><br>
+</form>
+<label>Total amount</label>
+
+<div>
+	<label id ="total">------- </label><br>
+</div>
+
+
+</body>
+</center>
+</html>

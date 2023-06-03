@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body bgcolor="lightyellow">
+<center>
+	<h1>ACTB Connection Portal</h1>
+	<table width="500" style="text-align: center">
+		<tr>
+			<td>Customer Name</td> 
+			<td><input type="text" name = "cname" placeholder= "Enter the customer name"></td>
+		</tr>
+		<tr>
+			<td>Customer Email</td>
+			<td><input type = "email" name = "mail" placeholder="abc@gmail.com"></td>
+		</tr>
+		<tr>
+			<td>Mobile Number</td>
+			<td><input type = "text" name="Mobile" placeholder="Enter the Mobile Number"></td>
+		</tr>
+		<tr>
+			<td>Type of Broadband</td>
+			<td>
+				<select>
+					<option name="type">pre</option>
+					<option name = "type">post</option>
+				</select>
+			</td>
+		</tr>
+		<tr> 
+			<td>Scheme type</td>
+			<td>
+				<input type="radio"	name = "scheme"><label>Local</label>
+				<input type = "radio" name = "scheme"><lable>STD</lable>
+				<input type = "radio" name = "Scheme"><label>FullTalkTime</label>		
+			</td>
+		</tr>
+		<tr>
+			<td>Connection Duration</td>
+			<td><input type = "number" min = "1" max = "12" ></td>
+		</tr>
+		<tr>
+			<td><input type = "button" name="calculate" value="Calculate Bill Amount"></td>
+			<td><input type = "reset"></td>
+		</tr>
+		
+		
+	</table>
+	<br><br>
+	<div>
+			<label>Rental cost table</label>
+		</div>
+</center>
+
+</body>
+</html>

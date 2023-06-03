@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>bill page</title>
+<style type="text/css">
+table{
+	border:3px solid black;
+	background-color: pink;
+	width:20%;
+}
+td{
+	padding: 25px;
+}
+</style>
+<script>
+function calculate(){
+	var rr= document.form.rrNo.value;
+	var name= document.form.cname.value;
+	var address= document.form.address.value;
+	var date= document.form.date.value;
+	var or = document.form.oldreading.value;
+	var nr = document.form.currentreading.value;
+	var bal = document.form.arrears.value;
+	var diff= Integer.parseInt(nr)-Integer.parseInt(or);
+	var temp = 0;
+	
+if(diff<=50){
+					temp = (diff*2 + parseInt(bal));
+				}
+				else if((diff - 50)<=100){
+					temp = 50*2 + parseInt(bal);
+					temp = temp + (diff-50)*3;
+					}
+				else{
+					temp = 50*2 + parseInt(bal) + 100*3;
+					temp = temp+ (diff-150)*5;
+					
+				}
+			
+	alert("RR Number: "+ rr+"\nConsumer Name: "+name+"\nAddress: "+address+"\nBill Date: "+ date+"\nOld Reading: "+or+" \nCurrent Reading: "+nr+"\nArrears: "+bal+"\nBill Amount: Rs "+temp);
+	}
+</script>
+
+</head>
+<body>
+<center>
+<h1 Style="background-color: orange">Electricity Bill</h1><br><br>
+<form name = "form">
+<table>
+	<tr>
+		<td>Enter RR Number</td>
+		<td><input type = "text" name = "rrno" placeholder="ex:-169"></td>
+	</tr>
+	<tr>
+		<td>Customer Name</td>
+		<td><input type = "text" name = "cname"placeholder="Enter Customer Name"></td>
+	</tr>
+	<tr>
+		<td>Address</td>
+		<td><textarea name = "address" placeholder="ex:-1/30,village....."></textarea></td>
+	</tr>
+	<tr>
+		<td>Bill Reading Date</td>
+		<td><input type = "date" name = "date"></td>
+	</tr>
+	<tr>
+		<td>Enter Old Meter Reading</td>
+		<td><input type = "text" name = "oldreading" placeholder="old reading"></td>
+	</tr>
+	<tr>
+		<td>Enter Current Meter Reading</td>
+		<td><input type = "text" name = "Currentreading" placeholder="current reading"></td>
+	</tr>
+	<tr>
+		<td>Enter Arrears if any</td>
+		<td><input type = "text" name = "arrears" placeholder="0"></td>
+	</tr>
+	<tr>
+		<td><input type = "reset" value = "clear"></td>
+		<td><input type = "button" value = "submit" onclick ="calculate()"></td>	
+	</tr>
+</table>
+<p >bill amount</p>
+<p id = "over">--------</p>
+</form>
+</center>
+</body>
+</html>
